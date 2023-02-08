@@ -5,7 +5,6 @@ const middlewares = jsonServer.defaults()
 
 server.use(middlewares)
 server.use(jsonServer.bodyParser)
-server.use(jsonServer.defaults)
 
 server.post('/todo', (req, res) => {
     const db = router.db.getState().todo
