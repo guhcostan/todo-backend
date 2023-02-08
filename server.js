@@ -1,7 +1,7 @@
 const jsonServer = require("json-server");
 const server = jsonServer.create();
 const middlewares = jsonServer.defaults();
-let router = jsonServer.router("db.json");
+let router = jsonServer.router("/tmp/db.json");
 const fs = require("fs");
 
 fs.appendFile(
@@ -13,7 +13,7 @@ fs.appendFile(
   function (err) {
     if (err) throw err;
     console.log("Saved!");
-    router = jsonServer.router("db.json");
+    router = jsonServer.router("/tmp/db.json");
   }
 );
 
